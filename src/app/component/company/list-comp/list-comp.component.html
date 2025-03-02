@@ -1,0 +1,21 @@
+<div>
+  <div class="text-light text-center p-4">
+    <h1>Lista de Empresas</h1>
+    <a class="btn btn-dark mt-4 fw-semibold rounded-4 border-2 border-warning" [routerLink]="['/create-company']">Crear</a>
+  </div>
+  <div class="container row m-auto justify-content-center">
+    @if (compList.length === 0) { <p class="text-center text-light fs-4 fw-semibold">Servidor no operativo</p> }
+    @for (c of compList; track c.id) {
+      <div class="col-3 bg-light rounded-4 m-3 p-3 fw-semibold fs-5">
+        <h2 class="text-center mb-3">{{c.name}}</h2>
+        <p>Número de empleados: {{emplList.length}}</p>
+
+        <div class="d-flex justify-content-between">
+          <a class="btn btn-info rounded-3" [routerLink]="['/details-company', c.id]">Detalles</a>
+          <a class="btn btn-primary rounded-3" [routerLink]="['/edit-company', c.id]">Editar</a>
+          <a class="btn btn-danger rounded-3" (click)="deleteCompany(c.id)">Eliminar</a>
+        </div>
+      </div>
+    }
+  </div>
+</div>

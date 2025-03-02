@@ -1,0 +1,94 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Juan Pérez",
+      "age": 35,
+      "position": "Desarrollador Frontend",
+      "salary": 45000,
+      "companyId": 1,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "María López",
+      "age": 29,
+      "position": "Diseñadora UX",
+      "salary": 40000,
+      "companyId": 2,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Carlos García",
+      "age": 42,
+      "position": "Gerente de Proyectos",
+      "salary": 60000,
+      "companyId": 3,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Ana Martínez",
+      "age": 31,
+      "position": "Analista de Datos",
+      "salary": 50000,
+      "companyId": 4,
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Luis Fernández",
+      "age": 38,
+      "position": "Administrador de Sistemas",
+      "salary": 47000,
+      "companyId": 5,
+      "isActive": false
+    },
+    {
+      "id": "6",
+      "name": "Sofía Torres",
+      "age": 26,
+      "position": "Especialista en Marketing",
+      "salary": 37000,
+      "companyId": 2,
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Pedro Castillo",
+      "age": 45,
+      "position": "Director Técnico",
+      "salary": 75000,
+      "companyId": 1,
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Lucía Sánchez",
+      "age": 33,
+      "position": "Ingeniera de Software",
+      "salary": 53000,
+      "companyId": 3,
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Javier Ortega",
+      "age": 28,
+      "position": "Consultor de Datos",
+      "salary": 41000,
+      "companyId": 4,
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Marta Gómez",
+      "age": 40,
+      "position": "Especialista en Ciberseguridad",
+      "salary": 58000,
+      "companyId": 5,
+      "isActive": true
+    }
+  ]
+}

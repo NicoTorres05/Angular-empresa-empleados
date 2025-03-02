@@ -1,0 +1,40 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "TechCorp",
+      "address": "Av. Innovación 123, Madrid",
+      "coords": { "lat": 40.4168, "lon": -3.7038 },
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Innovate Studio",
+      "address": "Calle Creativa 456, Barcelona",
+      "coords": { "lat": 41.3851, "lon": 2.1734 },
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Build&Code",
+      "address": "Paseo Desarrollo 789, Valencia",
+      "coords": { "lat": 39.4699, "lon": -0.3763 },
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "name": "DataSolutions",
+      "address": "Plaza Análisis 101, Sevilla",
+      "coords": { "lat": 37.3886, "lon": -5.9823 },
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "name": "NetSecure",
+      "address": "Calle Seguridad 202, Bilbao",
+      "coords": { "lat": 43.263, "lon": -2.935 },
+      "isActive": false
+    }
+  ]
+
+}

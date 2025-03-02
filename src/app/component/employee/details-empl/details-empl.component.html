@@ -1,0 +1,24 @@
+<div class="text-light">
+  <h1 class="text-center mt-4">Detalles del héroe</h1>
+  @if (empl) {
+    <div class="container text-center p-5 fs-4">
+      <p class="mt-4">ID:  {{empl.id}}.</p>
+      <p class="mt-4">Nombre: {{empl.name}}.</p>
+      <p class="mt-4">Edad {{empl.age}}.</p>
+      <p class="mt-4">Trabaja de {{empl.position}}.</p>
+      <p class="mt-4">Gana {{empl.salary}} al mes.</p>
+      @if (empl.isActive) {
+        <p class="mt-4">{{empl.name}} se encuentra activo/a en estos momentos.</p>
+      } @else {
+        <p class="mt-4">{{empl.name}} no se encuentra activo/a en estos momentos.</p>
+      }
+      @for (c of compList; track c.id) {
+          @if (c.id === empl.companyId) {
+            <p class="mt-4">Trabaja en la empresa {{c.name}}</p>
+          }
+      }
+    </div>
+  } @else {
+    <p>Error al cargar los datos.</p>
+  }
+</div>

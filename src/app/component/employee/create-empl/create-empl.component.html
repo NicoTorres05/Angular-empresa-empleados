@@ -1,0 +1,57 @@
+<div>
+  <h1 class="text-light text-center mt-4">Editar un empleado</h1>
+  <form class="container w-25 bg-secondary rounded-4 border border-2 border-warning text-black fw-semibold p-5 my-5"
+        [formGroup]="createEmplForm" (submit)="createEmpl()">
+
+    <label class="mb-2" for="name">Nombre del empleado</label>
+    <input class="form-control mb-4" type="text" name="name" id="name" formControlName="name">
+    @if (createEmplForm.get('name')?.invalid && (createEmplForm.get('name')?.dirty || createEmplForm.get('name')?.touched)) {
+      <p class="text-light">El nombre del empleado es obligatorio</p>
+    }
+
+    <label class="mb-2" for="age">Edad</label>
+    <input class="form-control mb-4" type="number" step="1" name="age" id="age" formControlName="age">
+    @if (createEmplForm.get('age')?.invalid && (createEmplForm.get('age')?.dirty || createEmplForm.get('age')?.touched)) {
+      @if (createEmplForm.get('age')?.errors?.['required']) {
+        <p>La edad es obligatoria</p>
+      }
+      @if (createEmplForm.get('age')?.errors?.['min']) {
+        <p>La edad debe ser mayor a 18 años</p>
+      }
+    }
+
+    <label class="mb-2" for="position">Puesto</label>
+    <input class="form-control mb-4" type="text" name="position" id="position" formControlName="position">
+    @if (createEmplForm.get('position')?.invalid && (createEmplForm.get('position')?.dirty || createEmplForm.get('position')?.touched)) {
+      <p class="text-light">El puesto de trabajo es obligatorio</p>
+    }
+
+    <label class="mb-2" for="salary">Salario (al mes)</label>
+    <input class="form-control mb-4" type="number" step="100" name="salary" id="salary" formControlName="salary">
+    @if (createEmplForm.get('salary')?.invalid && (createEmplForm.get('salary')?.dirty || createEmplForm.get('salary')?.touched)) {
+      <div class="text-light">
+        @if (createEmplForm.get('salary')?.errors?.['required']) {
+          <p>El salario es obligatorio</p>
+        }
+        @if (createEmplForm.get('salary')?.errors?.['min']) {
+          <p>El salario debe ser mayor a 1000</p>
+        }
+      </div>
+    }
+
+    <label class="mb-2" for="companyId">Empresa</label>
+    <select class="form-control mb-4" name="companyId" id="companyId" formControlName="companyId">
+      @for (c of compList; track c.id) {
+        <option value="{{c.id}}">{{c.name}}</option>
+      }
+    </select>
+
+    <div class="d-flex mb-4">
+      <label class="my-auto me-3" for="isActive">Actividad</label>
+      <input class="my-auto" type="checkbox" name="isActive" id="isActive" formControlName="isActive"><br>
+    </div>
+
+    <div class="d-flex"><button class="btn btn-dark mt-4 rounded-4 border-2 border-warning m-auto" type="submit"
+                                [disabled]="!createEmplForm.valid">Crear</button></div>
+  </form>
+</div>

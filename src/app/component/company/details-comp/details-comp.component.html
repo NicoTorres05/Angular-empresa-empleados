@@ -1,0 +1,23 @@
+<div class="text-light">
+  <h1 class="text-center mt-4">Detalles de la empresa</h1>
+  @if (comp) {
+    <div class="container text-center p-5 fs-4">
+      <p class="mt-4">ID de la empresa {{comp.id}}</p>
+      <p class="mt-4">Nombre de la empresa {{comp.name}}</p>
+      <p class="mt-4">Coordenadas de la empresa: {{comp.coords.lat}}, {{comp.coords.lon}}</p>
+      <p class="mt-4">Trabajadores de la empresa:</p>
+      <div class="row justify-content-center p-5">
+        @for (e of emplList; track e.id) {
+          <p class="col-2">{{e.name}}</p>
+        }
+      </div>
+      @if (comp.isActive) {
+        <p class="mt-4">{{comp.name}} se encuentra activa en estos momentos.</p>
+      } @else {
+        <p class="mt-4">{{comp.name}} no se encuentra activa en estos momentos.</p>
+      }
+    </div>
+  } @else {
+    <p>Error al cargar</p>
+  }
+</div>
