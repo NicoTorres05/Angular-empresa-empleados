@@ -12,6 +12,7 @@ import { EmployeeService } from '../../../service/employee.service';
   selector: 'app-edit-empl',
   imports: [ReactiveFormsModule],
   templateUrl: './edit-empl.component.html',
+  standalone: true,
   styleUrl: './edit-empl.component.css'
 })
 export class EditEmplComponent {

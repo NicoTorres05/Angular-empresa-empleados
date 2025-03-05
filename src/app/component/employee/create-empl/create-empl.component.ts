@@ -11,6 +11,7 @@ import {Company} from '../../../model/Company';
   selector: 'app-create-empl',
   imports: [ReactiveFormsModule],
   templateUrl: './create-empl.component.html',
+  standalone: true,
   styleUrl: './create-empl.component.css'
 })
 export class CreateEmplComponent {

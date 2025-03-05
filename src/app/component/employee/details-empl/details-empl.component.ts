@@ -13,6 +13,7 @@ import { CompanyService } from '../../../service/company.service';
   selector: 'app-details-empl',
   imports: [CommonModule],
   templateUrl: './details-empl.component.html',
+  standalone: true,
   styleUrl: './details-empl.component.css'
 })
 export class DetailsEmplComponent {

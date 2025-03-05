@@ -12,6 +12,7 @@ import {EmployeeService} from '../../../service/employee.service';
   selector: 'app-create-comp',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './create-comp.component.html',
+  standalone: true,
   styleUrl: './create-comp.component.css'
 })
 export class CreateCompComponent {

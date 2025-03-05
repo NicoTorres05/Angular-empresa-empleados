@@ -1,35 +1,45 @@
 <div>
+  <!-- Encabezado -->
   <div class="text-light text-center p-4">
-    <h1>Lista de Empleados</h1>
-    <a class="btn btn-dark mt-4 fw-semibold rounded-4 border-2 border-warning"
-       [routerLink]="['/create-employee']">Crear</a>
+    <h1 class="fw-bold">Lista de Empleados</h1>
+    <a class="btn btn-warning text-dark mt-4 fw-semibold rounded-pill px-4 py-2 shadow"
+       [routerLink]="['/create-employee']">➕ Crear Empleado</a>
   </div>
 
-  <div class="container row m-auto justify-content-center">
+  <!-- Contenedor Principal -->
+  <div class="container">
     @if (compList.length === 0) {
-      <p class="text-center text-light fs-4 fw-semibold">El servidor no está operativo</p>
-    }
-
-    @for (e of emplList; track e.id) {
-      <div class="col-3 bg-light rounded-4 m-3 p-3 fw-semibold fs-5">
-        <h2 class="text-center mb-3">{{ e.name }}</h2>
-        <p>Edad: {{ e.age }}</p>
-        <p>Puesto: {{ e.position }}</p>
-        <p>Salario: {{ e.salary }}</p>
-
-        @if (e.isActive) {
-          <p>Estado: Activo</p>
-        } @else {
-          <p>Estado: Inactivo</p>
-        }
-
-
-        <div class="d-flex justify-content-between">
-          <a class="btn btn-info rounded-3" [routerLink]="['/details-employee', e.id]">Detalles</a>
-          <a class="btn btn-primary rounded-3" [routerLink]="['/edit-employee', e.id]">Editar</a>
-          <a class="btn btn-danger rounded-3" (click)="deleteEmpl(e.id)">Eliminar</a>
-        </div>
+      <div class="alert alert-danger text-center fs-4 fw-semibold mt-4">
+        🚨 El servidor no está operativo
       </div>
     }
+
+    <div class="row justify-content-center">
+      @for (e of emplList; track e.id) {
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="card bg-light shadow-sm rounded-4 m-3 p-3 border-0">
+            <div class="card-body text-center">
+              <h2 class="text-primary fw-bold">{{ e.name }}</h2>
+              <p class="mb-1"><strong>Edad:</strong> {{ e.age }}</p>
+              <p class="mb-1"><strong>Puesto:</strong> {{ e.position }}</p>
+              <p class="mb-1"><strong>Salario:</strong> {{ e.salary}} €</p>
+
+              @if (e.isActive) {
+                <p class="text-success fw-semibold">🟢 Activo</p>
+              } @else {
+                <p class="text-danger fw-semibold">🔴 Inactivo</p>
+              }
+
+              <!-- Botones de Acción -->
+              <div class="d-flex justify-content-between mt-3">
+                <a class="btn btn-info rounded-pill px-3" [routerLink]="['/details-employee', e.id]">Detalles</a>
+                <a class="btn btn-primary rounded-pill px-3" [routerLink]="['/edit-employee', e.id]">Editar</a>
+                <a class="btn btn-danger rounded-pill px-3" (click)="deleteEmpl(e.id)">Eliminar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
   </div>
 </div>

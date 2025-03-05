@@ -11,6 +11,7 @@ import {EmployeeService} from '../../../service/employee.service';
   selector: 'app-edit-comp',
   imports: [ReactiveFormsModule],
   templateUrl: './edit-comp.component.html',
+  standalone: true,
   styleUrl: './edit-comp.component.css'
 })
 export class EditCompComponent {

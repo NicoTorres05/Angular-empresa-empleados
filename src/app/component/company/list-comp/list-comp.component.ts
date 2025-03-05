@@ -10,6 +10,7 @@ import {Employee} from '../../../model/Employee';
   selector: 'app-list-comp',
   imports: [RouterLink],
   templateUrl: './list-comp.component.html',
+  standalone: true,
   styleUrl: './list-comp.component.css'
 })
 export class ListCompComponent {
